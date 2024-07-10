@@ -1,0 +1,28 @@
+{% include "default/head.html" %}
+<body>
+  {% include "default/header.html" %}
+  <h1>{{ title[0] }}</h1>
+  <section class="my-4 mx-3">
+    <form class="form-productos" action="/insertar_prod" method="POST">
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre de Producto</label>
+        <input
+          type="text"
+          class="form-control"
+          name="nombre"
+          id="nombre"
+          placeholder="Escriba el nombre del producto..." />
+      </div>
+      <div class="mb-3">
+        <label for="descripcion" class="form-label">Descripción del producto</label>
+        <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="precio" class="form-label">Precio</label>
+        <input type="number" class="form-control" name="precio" id="precio" placeholder="Ingrese el precio $$" />
+      </div>
+      <input type="submit" class="btn btn-dark" value="Cargar Producto" />
+    </form>
+  </section>
+  {% include "default/footer.html" %} {% include "default/scriptsjs.html" %}
+</body>

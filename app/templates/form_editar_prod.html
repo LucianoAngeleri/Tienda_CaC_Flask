@@ -1,0 +1,42 @@
+{% include "default/head.html" %}
+<body>
+  {% include "default/header.html" %}
+  <h1>{{ title[0] }}</h1>
+  <section class="my-4 mx-3 text-bg-warning p-3 rounded-3">
+    <form class="form-productos" action="/actualizar_producto" method="POST">
+      <div class="mb-3">
+        <input type="hidden" class="form-control" id="id_prod" name="id_prod" value="{{ producto[0]}}">
+      </div>
+      <div class="mb-3">
+        <label for="nombre_edit" class="form-label">Nombre de Producto</label>
+        <input
+          type="text"
+          class="form-control"
+          name="nombre_edit"
+          id="nombre_edit"
+          placeholder="Escriba el nombre del producto..."
+          value="{{ producto[1] }}" />
+      </div>
+      <div class="mb-3">
+        <label for="descripcion_edit" class="form-label">Descripción del producto</label>
+        <textarea
+          class="form-control"
+          name="descripcion_edit"
+          id="descripcion_edit"
+          rows="3">{{ producto[2] }}</textarea>
+      </div>
+      <div class="mb-3">
+        <label for="precio_edit" class="form-label">Precio</label>
+        <input
+          type="number"
+          class="form-control"
+          name="precio_edit"
+          id="precio_edit"
+          placeholder="Ingrese el precio $$"
+          value="{{ producto[3] }}" />
+      </div>
+      <input type="submit" class="btn btn-dark" value="Guardar Cambios" />
+    </form>
+  </section>
+  {% include "default/footer.html" %} {% include "default/scriptsjs.html" %}
+</body>

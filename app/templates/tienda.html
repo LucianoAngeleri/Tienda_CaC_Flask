@@ -1,0 +1,25 @@
+{% include "default/head.html" %}
+<body>
+  {% include "default/header.html" %}
+  <section class="container">
+      <h1>{{ title[0] }}</h1>
+  </section>
+  <section class="container my-4">
+    <a href="/cargar_prod" class="btn btn-warning w-100">+ Cargar producto</a>
+  </section>
+  <section class="container my-4">
+    {% for producto in productos %}
+    <div class="row text-bg-dark p-3 rounded-3 my-3">
+        <div class="col-8">
+            <h2 class="fs-5">{{ producto[1]}} - <span>${{ producto[3]}}</span></h2>
+        </div>
+        <div class="col-4 text-center">
+            <a href="/editar_producto/{{ producto[0] }}" class="btn btn-primary">Editar</a>
+            <a href="/borrar_producto/{{ producto[0] }}" class="btn btn-danger">Borrar</a>
+        </div>
+    </div>
+    {% endfor %}
+
+  </section>
+  {% include "default/footer.html" %} {% include "default/scriptsjs.html" %}
+</body>

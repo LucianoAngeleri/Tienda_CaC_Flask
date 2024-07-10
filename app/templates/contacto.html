@@ -1,0 +1,20 @@
+{% include "default/head.html" %}
+<body>
+    {% include "default/header.html" %}
+
+    <h1>{{ title[0] }}</h1>
+
+    <div class="users">        
+        <ul>
+            {% for user in users %}
+            <li>
+                {{ user }}
+                <hr>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% include "default/footer.html" %}
+    {% include "default/scriptsjs.html" %}
+</body>
+</html>

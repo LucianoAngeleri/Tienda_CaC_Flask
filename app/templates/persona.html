@@ -1,0 +1,18 @@
+{% include "default/head.html" %}
+<body>
+    {% include "default/header.html" %}
+
+    <h1>{{ persona.nombre }}</h1>
+
+    <div class="persona">
+        <h2>Nombre: {{persona.nombre}}</h2>        
+        <h3>Puesto: {{persona.puesto}}</h3>        
+        <h3>Email: <a href="mailto:{{persona.email}}">{{persona.email}}</a></h3>
+        <h4>LinkedIn: 
+            <a href="{{persona.linkedin}}">{{persona.linkedin}}</a>
+        </h4>      
+    </div>
+    {% include "default/footer.html" %}
+    {% include "default/scriptsjs.html" %}
+</body>
+</html>

@@ -1,0 +1,34 @@
+{% include "default/head.html" %}
+<body>
+    {% include "default/header.html" %}
+    <main class="container">
+        <h1 class="display-1 p-2">{{ title[0] }}</h1>
+
+        <div class="personas container">        
+            <div class="row gap-3 alig-items-center justify-content-evenly">
+                {% for persona in personas %}
+                <div class="card col-3">
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="/staff/{{ persona.id }}">
+                                <h2 class="card-title fs-3">
+                                    {{ persona.nombre }}
+                                </h2>
+                            </a>
+                        </li>
+                        <li>
+                            <h3 class="card-subtitle fs-6">
+                                Puesto: {{ persona.puesto }}
+                            </h3>
+                        </li>
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+
+    {% include "default/footer.html" %}
+    {% include "default/scriptsjs.html" %}
+</body>
+</html>
